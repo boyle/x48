@@ -1,3 +1,31 @@
+Minor compile fix applied.
+
+To compile
+```
+./autogen.sh
+configure
+make
+```
+
+To build a .deb for install in Ubuntu, run
+```
+dpkg-buildpackage -b -uc -us
+```
+then install with `sudo apt-get install ./x48_0.6.4_amd64.deb`
+
+To download and initialize the freely available HP48G ROM
+```
+wget http://cgi.linuxfocus.org/~guido/x48/gxrom-r.zip
+unzip gxrom-r.zip
+x48 -initialize -reset -rom ../gxrom-r -connFont fixed
+```
+The ROM was provided by HP at some point apparently but it's redistribution is
+restricted, or at least slightly ambiguous.
+
+The script `x48g` will open & close the emulator. This can be
+associated with a keyboard shortcut in your window manager.
+
+```
 x48 -- HP48 CPU emulator
 ========================
 
@@ -354,3 +382,4 @@ Eddie C. Dost
 Belgium
 
 Have Fun.
+```

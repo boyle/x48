@@ -21,3 +21,10 @@
 /src/x48
 /src/x48.man
 /stamp-h1
+/build-stamp
+/configure-stamp
+/debian/.debhelper/
+/debian/files
+/debian/x48.debhelper.log
+/debian/x48.substvars
+/debian/x48/
