@@ -1,0 +1,21 @@
+#! /bin/sh
+PID="/tmp/${USER}/$(basename $0).pid"
+[ ! -d "$(dirname "${PID}")" ] && mkdir -p "$(dirname "${PID}")"
+
+
+if [ -f "$PID" ]; then # file.pid exists
+    ps -p $(cat "$PID")
+    [ $? != 0 ] && rm "$PID"
+    echo "not running"
+fi
+
+if [ -f "$PID" ]; then # still running, so kill it
+    echo "kill"
+    kill $(cat "$PID")
+    rm "$PID"
+    exit 0
+fi
+
+echo "start"
+x48 -throttle -gray -connFont fixed -title "$(basename $0)" &
+echo $! > "$PID"

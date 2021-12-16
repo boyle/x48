@@ -3,6 +3,8 @@
 
 bin_PROGRAMS = x48 dump2rom mkcard checkrom
 
+dist_bin_SCRIPTS = x48g
+
 BITMAPS = bitmaps/A.h bitmaps/B.h bitmaps/C.h bitmaps/D.h bitmaps/E.h bitmaps/F.h \
           bitmaps/G.h bitmaps/H.h bitmaps/I.h bitmaps/J.h bitmaps/K.h \
           bitmaps/L.h bitmaps/M.h bitmaps/N.h bitmaps/O.h bitmaps/P.h \
